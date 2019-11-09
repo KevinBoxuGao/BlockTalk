@@ -11,17 +11,26 @@
     <!--Note for Kevin: remove the script line below this comment after npm installing.-->
     <script src="https://cdn.jsdelivr.net/npm/fortmatic@latest/dist/fortmatic.js"></script>
     <script src="fortmatic.js"></script>
+    
 </head>
 
 <body>
     <div class="container">
-        <h1>Your Favorite Ethereum Wallet 💎</h1>
+        <h1>Your Favorite Ethereum DApp 💎</h1>
         <div class="divider"></div>
-        <div id="section-login">
-            <a id="btn-login" class="btn">Login with SMS</a>
-        </div>
-        <div id="section-logout" style="display: none">
+        <a id="btn-login" class="btn">Login/Signup</a>
+    </div>
+
+    <div id="logged-in">
+        <div class="header">
             <a id="btn-logout" class="btn">Logout</a>
+            <br>
+            <h1>Bytemail 2.0</h1>
+        </div>
+        <div id="messages"></div>
+        <div id="enter">
+            <input placeholder="Message:" id="input">
+            <button class="btn">Send</button>
         </div>
     </div>
 </body>

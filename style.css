@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+
 html,
 body {
   background-color: #211F2B;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Ubuntu", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -14,14 +16,14 @@ h2 {
 
 h1 {
   color: white;
-  font-size: 16px;
+  font-size: 30px;
   font-weight: 500;
   margin-top: 10px;
 }
 
 h2 {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 14px;
+  font-size: 25px;
   font-weight: 500;
   margin-bottom: 10px;
 }
@@ -69,6 +71,7 @@ textarea:focus {
   border-radius: 14px;
   padding: 30px 30px 20px 30px;
   margin-top: 50px;
+  padding: 5%;
 }
 
 input[name="amount"] {
@@ -83,18 +86,13 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .btn {
-  display: block;
-  text-decoration: none;
-  border-radius: 7px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  font-size: 20px;
-  font-weight: 600;
-  border: 2px #617BFF solid;
-  color: white;
-  background-color: #617BFF;
-  padding: 15px;
-  transition: all 0.2s;
+    border-radius: 5px;
+    border: none;
+    border: 2px rgb(95, 121, 250) solid;
+    background-color: rgb(95, 121, 250);
+    padding: 10px;
+    color: white;
+    transition: 0.5s;
 }
 
 .btn:hover {
@@ -107,6 +105,10 @@ input[type=number]::-webkit-outer-spin-button {
   border: 2px #4863EC solid;
   background-color: #4863EC;
   cursor: pointer;
+}
+
+#btn-logout {
+  margin-left: 90%;
 }
 
 #user-balance {
@@ -127,4 +129,56 @@ input[type=number]::-webkit-outer-spin-button {
   background: rgba(255,255,255,0.05);
   padding: 10px 20px;
   border-radius: 7px;
+}
+
+.header {
+    width: 100%;
+    padding: 5% 0%;
+    line-height: 2;
+    background: linear-gradient(90deg, #690CB0 5%, #6F18B3 40%, rgba(255, 255, 255, 0) 90%, #9A6EBC 110%), #7C36B3;
+}
+
+#messages {
+    padding: 5%;
+    width: 90%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column-reverse;
+    overflow: auto;
+}
+
+#enter {
+    position: absolute;
+    position: fixed;
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 10px;
+}
+
+#input {
+    color: grey;
+    width: 90%;
+    padding: 10px;
+    border: 0;
+    outline: 0;
+    border-bottom: 2px solid black;
+    margin-right: 10px;
+}
+
+#enter button {
+    margin-left: 20px;
+}
+
+#message {
+    width: 98%;
+    padding: 10px;
+    border: 0;
+    outline: 0;
+    color: white;
+}
+
+#message:hover {
+    background-color: rgb(236, 234, 234);
+    color: black;
 }

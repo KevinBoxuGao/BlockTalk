@@ -11,8 +11,8 @@ window.web3 = new Web3(fm.getProvider());
 let handleLogin = () => {
     fm.user.login().then(() => {
         console.log(fm.user.isLoggedIn());
-        $('#section-login').hide();
-        $('#section-logout').show();
+        $('.container').hide();
+        $('#logged-in').show();
         let userData = fm.user.getUser();
     });
 }
@@ -20,12 +20,30 @@ let handleLogin = () => {
 //Logout
 let handleLogout = () => {
     fm.user.logout();
-    $('#section-logout').hide();
-    $('#section-login').show();
+    $('#logged-in').hide();
+    $('.container').show();
+}
+
+let send = () => {
+    var input = document.getElementById("input").value;
+    var div = document.createElement("DIV");
+    div.setAttribute("id", "message");
+
+    var text = document.createTextNode("You: " + input);
+    div.appendChild(text);
+
+    var messages = document.getElementById("messages");
+
+    if (input !== "") {
+        messages.insertBefore(div, messages.children[0]);
+    }
+
+    document.getElementById("input").value = "";
 }
 
 window.onload = function() {
-    $('#section-logout').hide();
+    $('#logged-in').hide();
+    $('#enter button').click(send);
     $('#btn-login').click(() => {
         handleLogin();
     });
