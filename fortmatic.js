@@ -9,10 +9,12 @@ window.web3 = new Web3(fm.getProvider());
 
 //Logs user in
 let handleLogin = () => {
-    fm.user.login();
-    $('#section-login').hide();
-    $('#section-logout').show();
-    let userData = fm.user.getUser();
+    fm.user.login().then(() => {
+        console.log(fm.user.isLoggedIn());
+        $('#section-login').hide();
+        $('#section-logout').show();
+        let userData = fm.user.getUser();
+    });
 }
 
 //Logout
