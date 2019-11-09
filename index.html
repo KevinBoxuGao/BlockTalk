@@ -16,36 +16,43 @@
 </head>
 
 <body>
+    <!--Login Page-->
     <div class="container">
         <h1>Bytemail 2.0 - Your Favorite Ethereum DApp 💎</h1>
         <div class="divider"></div>
         <a id="btn-login" class="btn">Login/Signup</a>
     </div>
 
+    <!--Logged in-->
     <div id="logged-in">
+        <!--Side navbar-->
         <div class="sidenav">
             <a id="closeNav">&times</a>
             <a id="btn-logout">Logout</a>
             <br>
             <a id="contactLink">Contacts</a>
         </div>
+
+        <!--Chat page-->
         <div id="chat">
             <div class="header">
                 <h1 class="menu">&#9776;</h1>
                 <h1>Chat</h1>
             </div>
-            <div id="messages"></div>
-            <div id="enter">
+            <div id="messages"></div> <!--Where messages are stored-->
+            <div id="enter"> <!--Input for writing message-->
                 <input placeholder="Message:" id="messageInput">
                 <button class="btn">Send</button>
             </div>
         </div>
+
+        <!--Page for contacts-->
         <div id="contactPage">
             <div class="header">
                 <h1 class="menu">&#9776;</h1>
                 <h1>Contacts</h1>
             </div>
-            <div id="addContact">
+            <div id="addContact"> <!--Input for adding contacts-->
                 <input placeholder="Name:" id="nameInput">
                 <button class="btn">Add</button>
             </div>
