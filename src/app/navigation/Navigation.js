@@ -1,13 +1,31 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom';
+import "./Navigation.css"
 
-class Navigation extends Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
+import * as ROUTES from '../../constants/routes';
+
+const Navigation = () => (
+  <div>
+    <NavigationAuth /> 
+  </div>
+);
+  
+class NavigationAuth extends React.Component {
+
+  render() {
+    return(
+      <div>
+        NavigationAuth
+      </div>
+    );
+  }
 }
+
+const NavigationNonAuth = () => (
+  <div>
+    <Link to={ROUTES.LANDING}>Landing</Link>
+    <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+  </div>
+);
 
 export default Navigation;

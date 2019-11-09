@@ -3,30 +3,28 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import * as ROUTES from '../constants/routes';
 
-import { withAuthentication } from '../Session';
+import { withAuthentication } from '../session';
 import "./App.css";
 
-import Navigation from './navigation';
-import LandingPage from './landing';
-import SignInPage from './signin';
-import HomePage from './home';
+import Navigation from './navigation/Navigation';
+import Landing from './landing/Landing';
+import SignIn from './signin/SignIn';
+import Home from './home/Home';
 
 //dev
-import ErrorBoundary from '../../testing/ErrorBoundary';
+import ErrorBoundary from '../testing/ErrorBoundary';
 
 //function component
 function App() {
   return(
     <Router>
-      <div>
-        <Navigation></Navigation>
-        <hr/>
-        <Route exact path={ROUTES.LANDING} component={LandingPage} />
-        <Route path={ROUTES.SIGN_IN} component={SignInPage} />
-        <Route path={ROUTES.HOME} component={HomePage} />
-      </div>
+      <Navigation></Navigation>
+      <hr/>
+      <Route exact path={ROUTES.LANDING} component={Landing} />
+      <Route path={ROUTES.SIGN_IN} component={SignIn} />
+      <Route path={ROUTES.HOME} component={Home} />
     </Router>
   );
 }
 
-export default withAuthentication(App);
+export default App;
