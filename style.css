@@ -41,23 +41,6 @@ form {
   background-color: #617BFF;
 }
 
-input,
-textarea {
-  position: relative;
-  text-align: center;
-  display: block;
-  margin: 0;
-  border-radius: 7px;
-  border: 2px white solid;
-  background-color: white;
-  padding: 10px 20px;
-  width: 100%;
-  color: #1E1C29;
-  margin-bottom: 20px;
-  box-sizing: border-box;
-  transition: all 0.2s;
-}
-
 input:focus,
 textarea:focus {
   outline: none;
@@ -93,6 +76,10 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 10px;
     color: white;
     transition: 0.5s;
+}
+
+#logged-in {
+  height: 100%;
 }
 
 .btn:hover {
@@ -139,7 +126,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #messages {
+    position: fixed;
     padding: 5%;
+    height: 40%;
     width: 90%;
     display: flex;
     align-items: flex-end;
@@ -150,6 +139,7 @@ input[type=number]::-webkit-outer-spin-button {
 #enter {
     position: absolute;
     position: fixed;
+    bottom: 0;
     display: flex;
     width: 90%;
     margin-left: 5%;
@@ -160,6 +150,7 @@ input[type=number]::-webkit-outer-spin-button {
     color: grey;
     width: 90%;
     padding: 10px;
+    border-radius: 10px;
     border: 0;
     outline: 0;
     border-bottom: 2px solid black;
@@ -168,6 +159,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 #enter button {
     margin-left: 20px;
+    padding: none;
 }
 
 #message {
