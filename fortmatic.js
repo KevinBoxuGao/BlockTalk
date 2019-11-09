@@ -25,6 +25,7 @@ let handleLogout = () => {
     closeSideNav();
 }
 
+//Send message
 let send = () => {
     var input = document.getElementById("messageInput").value;
     var div = document.createElement("DIV");
@@ -42,7 +43,7 @@ let send = () => {
     var messages = document.getElementById('messages');
 
     if (input !== "") {
-        var sameTime = false;
+        var sameTime = false; //Won't display time if minute is the same
         for (var i=0; i < messages.childElementCount; i++) {
             if (time.innerText == messages.childNodes[i].innerText) {
                 sameTime = true;
@@ -58,6 +59,7 @@ let send = () => {
     document.getElementById('messageInput').value = "";
 }
 
+//Gets time
 function getTime() {
     var d = new Date();
     var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -89,20 +91,24 @@ function getTime() {
     }
 }
 
+//Open sidenav
 function openSideNav() {
     $('.sidenav').width('200px');
 }
 
+//Close sidenav
 function closeSideNav() {
     $('.sidenav').width('0px');
 }
 
+//Click contacts link to open contacts
 function openContacts() {
     $('#contactPage').show();
     $('#chat').hide();
     closeSideNav();
 }
 
+//Click a person's contact to open a chat
 function openChat() {
     console.log('hi');
     $('#chat').show();
@@ -110,6 +116,7 @@ function openChat() {
     closeSideNav();
 }
 
+//Adds a contact
 let addContact = () => {
     if (document.getElementById('nameInput').value != '') {
         var name = document.createTextNode(document.getElementById('nameInput').value);
@@ -124,20 +131,21 @@ let addContact = () => {
     }
 }
 
+//Allows for adding events to dynamic elements
 window.onload = function() {
-    $('#logged-in').hide();
-    $('#chat').hide();
-    $('#enter button').on('click', send);
-    $('#btn-login').on('click', () => {
+    $('#logged-in').hide(); //Hides in login page
+    $('#chat').hide(); //Hides chat page
+    $('#enter button').on('click', send); //Send message
+    $('#btn-login').on('click', () => { //Login
         handleLogin();
     });
-    $('#btn-logout').on('click', () => {
+    $('#btn-logout').on('click', () => { //Logout
         handleLogout();
     });
 
-    $('.menu').on('click', openSideNav);
-    $('#closeNav').on('click', closeSideNav);
-    $('#contactLink').on('click', openContacts);
-    $('#addContact button').on('click', addContact);
-    $(document).on('click', '.contact', openChat);
+    $('.menu').on('click', openSideNav); //Opens sidenav
+    $('#closeNav').on('click', closeSideNav); //Closes sidenav
+    $('#contactLink').on('click', openContacts); //Opens contact page
+    $('#addContact button').on('click', addContact); //Adds a contact
+    $(document).on('click', '.contact', openChat); //Opens chat page
 }
