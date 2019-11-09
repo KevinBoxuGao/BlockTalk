@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
+import { withFortmatic } from '../../auth';
+
 import {Redirect} from 'react-router-dom'
 
 class Home extends Component {
   renderRedirect = () => {
-    if (!Fm.loggedIn()) {
+    if (!this.props.Fm.loggedIn()) {
       return <Redirect to='/signin' />
     }
   }
@@ -18,4 +20,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default withFortmatic(Home);

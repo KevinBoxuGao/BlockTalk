@@ -6,7 +6,6 @@ import {Redirect} from 'react-router-dom'
 
 import './SignIn.css';
 
-import ErrorBoundary from '../../testing/ErrorBoundary'
 
 class SignIn extends Component {
   renderRedirect = () => {
@@ -14,22 +13,26 @@ class SignIn extends Component {
       return <Redirect to='/home' />
     }
   }
-
-  handleClick = toggler => {
+  
+  handleClick = () => {
+    console.log('yes');
     this.props.Fm.handleLogin().then(() => {
       this.props.history.push(ROUTES.HOME);  
     }); 
+    this.props.history.push(ROUTES.HOME); 
   }
   
   render() {
     return (
-      <div className="container">
+      <div>
         {this.renderRedirect()}
-        <div>
-          <h1>Your Favorite Ethereum Wallet 💎></h1>
-          <div className="divider"></div>
-          <div id="section-login">
-            <a id="btn-login" className="btn" onClick={this.handleClick()}>Login with SMS</a>
+        <div className="container">
+          <div>
+            <h1>Your Favorite Ethereum Wallet 💎></h1>
+            <div className="divider"></div>
+            <div id="section-login">(
+              <button id="btn-login" className="btn" onClick={() => this.handleClick()}>Login with SMS</button>
+            </div>
           </div>
         </div>
       </div>

@@ -8,8 +8,9 @@ const withAuthentication = Component => {
       super(props);
 
       this.toggleAuthState = () => {
-        this.setState( {authUser: Fm.loggedIn}
-        );
+        Fm.loggedIn().then(result =>
+          this.setState({authUser: result})
+        )
       };
 
       this.state = {

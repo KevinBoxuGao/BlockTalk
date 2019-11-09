@@ -15,8 +15,10 @@ class Fm {
 
   //Checks if user is logged-in
   loggedIn = () => {
-    let isLoggedIn = this.fm.user.isLoggedIn();
-    return isLoggedIn;
+    this.fm.user.isLoggedIn()
+    .then(result =>
+      result
+    );
   }
 
   //Logout
