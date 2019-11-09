@@ -1,40 +1,32 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
+import * as ROUTES from '../constants/routes';
+
+import { withAuthentication } from '../Session';
 import "./App.css";
+
+import Navigation from './navigation';
+import LandingPage from './landing';
+import SignInPage from './signin';
+import HomePage from './home';
+
 //dev
-import {hot} from "react-hot-loader";
+import ErrorBoundary from '../../testing/ErrorBoundary';
 
 //function component
 function App() {
   return(
-    <div>
-      success
-    </div>
+    <Router>
+      <div>
+        <Navigation></Navigation>
+        <hr/>
+        <Route exact path={ROUTES.LANDING} component={LandingPage} />
+        <Route path={ROUTES.SIGN_IN} component={SignInPage} />
+        <Route path={ROUTES.HOME} component={HomePage} />
+      </div>
+    </Router>
   );
 }
 
-//class component
-/* 
-class ComponentName extends React.Component {
-  static propTypes = {
-    exampleProp: PropTypes.string,
-  }
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      exampleState: null,
-    };
-  }
-
-  render() {
-    return (
-      <div>
-      </div>
-    );
-  }
-}
-*/
-
-export default App;
+export default withAuthentication(App);
