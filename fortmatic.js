@@ -11,7 +11,7 @@ window.web3 = new Web3(fm.getProvider());
 let handleLogin = () => {
     fm.user.login().then(() => {
         console.log(fm.user.isLoggedIn());
-        $('.container').hide();
+        $('#logged-out').hide();
         $('#logged-in').show();
         let userData = fm.user.getUser();
     });
@@ -21,7 +21,7 @@ let handleLogin = () => {
 let handleLogout = () => {
     fm.user.logout();
     $('#logged-in').hide();
-    $('.container').show();
+    $('#logged-out').show();
     closeSideNav();
 }
 

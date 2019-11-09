@@ -53,12 +53,9 @@ textarea:focus {
 
 .container {
   background-color: black;
-  width: 300px;
-  margin: 0 auto;
-  border-radius: 14px;
-  padding: 30px 30px 20px 30px;
-  margin-top: 50px;
-  padding: 5%;
+  width: 100%;
+  padding: 4% 0%;
+  text-align: center;
 }
 
 input[name="amount"] {
