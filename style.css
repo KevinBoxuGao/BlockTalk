@@ -2,7 +2,6 @@
 
 html,
 body {
-  background-color: #211F2B;
   font-family: "Ubuntu", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -12,6 +11,11 @@ body {
 h1,
 h2 {
   margin: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 h1 {
@@ -48,7 +52,7 @@ textarea:focus {
 }
 
 .container {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: black;
   width: 300px;
   margin: 0 auto;
   border-radius: 14px;
@@ -95,7 +99,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #btn-logout {
-  margin-left: 90%;
+  position: relative;
+  right: 0;
 }
 
 #user-balance {
@@ -118,22 +123,70 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 7px;
 }
 
+.menu {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: left;
+  margin-left: 10px;
+  max-width: 40px;
+  cursor: pointer;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(189, 189, 189);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  color: black;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.sidenav a:hover {
+  color: grey;
+  transition: 0.5s;
+}
+
+#closeNav {
+  font-size: 30px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
 .header {
     width: 100%;
-    padding: 5% 0%;
-    line-height: 2;
-    background: linear-gradient(90deg, #690CB0 5%, #6F18B3 40%, rgba(255, 255, 255, 0) 90%, #9A6EBC 110%), #7C36B3;
+    padding: 2% 0%;
+    line-height: 1.5;
+    background-image: linear-gradient(to bottom right, rgb(0, 119, 255), rgb(95, 178, 255));
 }
 
 #messages {
     position: fixed;
     padding: 5%;
     height: 40%;
-    width: 90%;
+    width: 85%;
     display: flex;
     align-items: flex-end;
     flex-direction: column-reverse;
     overflow: auto;
+}
+
+.sender {
+  float: left;
+}
+
+.receiver {
+  float: right;
 }
 
 #enter {
@@ -141,19 +194,25 @@ input[type=number]::-webkit-outer-spin-button {
     position: fixed;
     bottom: 0;
     display: flex;
-    width: 90%;
-    margin-left: 5%;
+    width: 80%;
+    margin-left: 10%;
     margin-top: 10px;
 }
 
-#input {
+#addContact {
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10px;
+}
+
+#messageInput, #nameInput {
     color: grey;
     width: 90%;
     padding: 10px;
     border-radius: 10px;
-    border: 0;
+    border: 1px solid black;
     outline: 0;
-    border-bottom: 2px solid black;
     margin-right: 10px;
 }
 
@@ -163,14 +222,46 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #message {
-    width: 98%;
+    background-color: #4863EC;
     padding: 10px;
     border: 0;
     outline: 0;
     color: white;
 }
 
+.time {
+    font-size: 15px;
+    color: grey;
+    margin-top: 10px;
+}
+
 #message:hover {
-    background-color: rgb(236, 234, 234);
-    color: black;
+    background-color: rgb(120, 122, 253);
+    transition: 0.5s;
+}
+
+.contact {
+  cursor: pointer;
+  margin-bottom: 5px;
+  width: 46%;
+  float: left;
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(160, 160, 255);
+  border: none;
+  border-radius: 5px;
+  font-size: 30px;
+}
+
+.contact:hover {
+  background-color: rgb(180, 214, 253);
+  transition: 0.5s;
+}
+
+.contact:nth-child(2n) {
+  float: right;
+}
+
+#contacts {
+  margin-top: 10px;
 }

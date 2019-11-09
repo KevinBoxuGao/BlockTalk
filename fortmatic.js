@@ -22,32 +22,122 @@ let handleLogout = () => {
     fm.user.logout();
     $('#logged-in').hide();
     $('.container').show();
+    closeSideNav();
 }
 
 let send = () => {
-    var input = document.getElementById("input").value;
+    var input = document.getElementById("messageInput").value;
     var div = document.createElement("DIV");
     div.setAttribute("id", "message");
+    div.setAttribute("class", "sender");
 
-    var text = document.createTextNode("You: " + input);
+    var text = document.createTextNode(input);
     div.appendChild(text);
 
-    var messages = document.getElementById("messages");
+    var time = document.createElement("DIV");
+    time.setAttribute("class", "time");
+    var timeTxt = document.createTextNode(getTime());
+    time.appendChild(timeTxt);
+
+    var messages = document.getElementById('messages');
 
     if (input !== "") {
-        messages.insertBefore(div, messages.children[0]);
+        var sameTime = false;
+        for (var i=0; i < messages.childElementCount; i++) {
+            if (time.innerText == messages.childNodes[i].innerText) {
+                sameTime = true;
+                break;
+            }
+        }
+        if (!sameTime) {
+            messages.insertBefore(time, messages.children[0]);
+        }
+        messages.insertBefore(div, messages.children[0]);        
     }
 
-    document.getElementById("input").value = "";
+    document.getElementById('messageInput').value = "";
+}
+
+function getTime() {
+    var d = new Date();
+    var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var date = [3];
+
+    var hour = d.getHours();
+    var minute = d.getMinutes();
+    var z = "am"
+
+    if (hour >= 12) {
+        z = "pm";
+    }
+
+    if (hour > 12) {
+        hour -= 12;
+    }
+
+    minute = checkTime(minute);
+
+    date[0] = month[d.getMonth()] + " " + d.getDate();
+    date[1] = d.getFullYear();
+    date[2] = hour + ":" + minute + " " + z;
+
+    return date.join(", ");
+
+    function checkTime(i) {
+        if (i < 10) { i = "0" + i };
+        return i;
+    }
+}
+
+function openSideNav() {
+    $('.sidenav').width('200px');
+}
+
+function closeSideNav() {
+    $('.sidenav').width('0px');
+}
+
+function openContacts() {
+    $('#contactPage').show();
+    $('#chat').hide();
+    closeSideNav();
+}
+
+function openChat() {
+    console.log('hi');
+    $('#chat').show();
+    $('#contactPage').hide();
+    closeSideNav();
+}
+
+let addContact = () => {
+    if (document.getElementById('nameInput').value != '') {
+        var name = document.createTextNode(document.getElementById('nameInput').value);
+        var div = document.createElement('DIV');
+        div.setAttribute('class', 'contact');
+        div.appendChild(name);
+
+        var contacts = document.getElementById('contacts');
+        contacts.appendChild(div);
+
+        document.getElementById('nameInput').value = '';
+    }
 }
 
 window.onload = function() {
     $('#logged-in').hide();
-    $('#enter button').click(send);
-    $('#btn-login').click(() => {
+    $('#chat').hide();
+    $('#enter button').on('click', send);
+    $('#btn-login').on('click', () => {
         handleLogin();
     });
-    $('#btn-logout').click(() => {
+    $('#btn-logout').on('click', () => {
         handleLogout();
     });
+
+    $('.menu').on('click', openSideNav);
+    $('#closeNav').on('click', closeSideNav);
+    $('#contactLink').on('click', openContacts);
+    $('#addContact button').on('click', addContact);
+    $(document).on('click', '.contact', openChat);
 }
