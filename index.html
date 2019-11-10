@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BlockThing</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="http://localhost:3000/fortmatic-style" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/web3@0.20.7/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <!--Note for Kevin: remove the script line below this comment after npm installing.-->
+    <script src="https://cdn.jsdelivr.net/npm/fortmatic@latest/dist/fortmatic.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://localhost:3000/fortmatic-script"></script>
+
+</head>
+
+<body>
+    <!--Login Page-->
+    <div class="container">
+        <h1>Bytemail 2.0 💎</h1>
+        <div class="divider"></div>
+        <a id="btn-login" class="btn">Signup/Login</a>
+    </div>
+
+    <!--Logged in-->
+    <div id="logged-in">
+        <div id="uploadForm">
+            <button id="btn-3"><img src="ethereum"/></img><h3 id="btn-3-h3">(You)</h3></button>
+            <input id="eth-field" type="text" name="textToUpload" placeholder="Enter an ETH address here"/>
+            <button id="submission-button" onclick="addContact()"> + </button>
+            <input id="uid-input" name="UID" type="hidden"/>
+        </div>
+
+        <!--Chat page-->
+
+        <div id="chat">
+            <input id="messageInput" type="text" name="textToUpload" placeholder="Message : "/>
+            <button id="submission-button-2" onclick="sendMessage()"> + </button>
+        </div>
+
+        <div id="messages"></div>
+        <!--Page for contacts-->
+        <div id="contactPage">
+            <div id="contacts">
+                <h1>Communication Channels</h1>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

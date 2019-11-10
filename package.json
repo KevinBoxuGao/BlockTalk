@@ -1,0 +1,22 @@
+{
+  "name": "ethwaterloo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "ethers": "^4.0.39",
+    "express": "^4.16.4",
+    "fortmatic": "^1.0.0",
+    "ipfs-http-client": "^39.0.2",
+    "is-ipfs": "^0.6.1",
+    "multer": "^1.4.2",
+    "node-rest-client-promise": "^3.1.1",
+    "web3": "^1.2.2"
+  },
+  "author": "",
+  "license": "ISC"
+}

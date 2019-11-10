@@ -1,0 +1,410 @@
+html,
+body {
+  background-color: #211F2B;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+h1 {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+h2 {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+form {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.divider {
+  width: 100px;
+  height: 3px;
+  margin: 20px auto;
+  background-color: #617BFF;
+}
+
+input,
+textarea {
+  position: relative;
+  text-align: center;
+  display: block;
+  margin: 0;
+  border-radius: 7px;
+  border: 2px white solid;
+  background-color: white;
+  padding: 10px 20px;
+  width: 100%;
+  color: #1E1C29;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 2px #617BFF solid;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 300px;
+  margin: 0 auto;
+  border-radius: 14px;
+  padding: 30px 30px 20px 30px;
+  margin-top: 50px;
+}
+
+input[name="amount"] {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.btn {
+  display: block;
+  text-decoration: none;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  border: 2px #617BFF solid;
+  color: white;
+  background-color: #617BFF;
+  padding: 15px;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  border: 2px #8095FF solid;
+  background-color: #8095FF;
+  cursor: pointer;
+}
+
+#logged-in {
+  height: 100%;
+}
+
+.btn:active {
+  border: 2px #4863EC solid;
+  background-color: #4863EC;
+  cursor: pointer;
+}
+
+
+#user-balance {
+  font-size: 24px;
+  color: white;
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+#btn-logout {
+  position: relative;
+  right: 0;
+}
+
+
+#user-address {
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+  margin: 0 auto;
+  word-break: break-word;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  max-width: 230px;
+  background: rgba(255,255,255,0.05);
+  padding: 10px 20px;
+  border-radius: 7px;
+}
+
+
+#uploadForm{
+  margin: 0 auto;
+  width:350px;
+  margin-top:40px;
+}
+
+#submission-button{
+  height:50px;
+  width:50px;
+  font-size:25px;
+  border-radius:0px 7px 7px 0px;
+  border:none;
+  background: #617BFF;
+  font-weight:500;
+  color:white;
+  float:left;
+}
+
+#submission-button:hover{
+  background: #8095FF;
+}
+
+#uploadForm #recipient-input{
+  border-radius:7px;
+  width:350px;
+}
+
+#uploadForm input{
+  width:300px;
+  border-radius: 7px 0px 0px 7px;
+  height:50px;
+  float:left;
+  font-size:11px;
+}
+
+.messageBubble{
+  border-radius: 7px;
+  padding-bottom:50px;
+  margin: 0 auto;
+  width:230px;
+  background: white;
+  color:#131313;
+  margin-top:10px;
+  padding:10px;
+	position: relative;
+	border-radius: .4em;
+}
+
+.author{
+  color:rgb(233, 190, 190);
+  font-size: 15px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(189, 189, 189);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+
+.header {
+    width: 100px;
+    padding: 2% 0%;
+    font-size:30px;
+    line-height: 1.5;
+}
+
+#messages {
+    position: fixed;
+    left: 30%;
+    top:170px;
+    height: 60%;
+    width: 40%;
+    padding:0;
+    margin:0;
+    display: flex;
+    align-items: flex-end;
+    background: #1E1C29;
+    flex-direction: column-reverse;
+    overflow-y: auto;
+}
+
+.sender {
+  float: left;
+}
+
+.receiver {
+  float: right;
+}
+
+#enter {
+    position: absolute;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10px;
+}
+
+#addContact {
+    display: flex;
+    width: 30%;
+    margin-right: 20%;
+    margin-top: 10px;
+}
+
+#messageInput {
+    color: grey;
+    position:fixed;
+    width: 31%;
+    padding: 1.5%;
+    border: 1px solid black;
+    right:33%;
+    bottom:20px;
+    border-radius: 7px 0px 0px 7px;
+    height:50px;
+}
+
+#enter button {
+    margin-left: 20px;
+    padding: none;
+}
+
+#message {
+    background-color: #4863EC;
+    padding: 10px;
+    border: 0;
+    outline: 0;
+    color: white;
+}
+
+.time {
+    font-size: 15px;
+    color: grey;
+    margin-top: 10px;
+}
+
+#message:hover {
+    background-color: rgb(120, 122, 253);
+    transition: 0.5s;
+}
+
+.contact {
+  cursor: pointer;
+  margin-top: 30px;
+  width: 100%;
+  padding: 20px 0 20px 0;
+  float: left;
+  text-align: center;
+  border:none;
+  font-size: 15px;
+}
+
+.contact:hover {
+  background-color: rgb(180, 214, 253);
+  transition: 0.5s;
+}
+
+#contacts {
+  position:fixed;
+  top: 100px;
+  left:0px;
+  width:300px;
+  height:700px;
+}
+
+.btn-2 {
+  display: block;
+  overflow-x: hidden;
+  margin:auto;
+  width:200px;
+  text-decoration: none;
+  border-radius: 7px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 600;
+  border: 2px #617BFF solid;
+  color: white;
+  background-color: #617BFF;
+  padding: 5px;
+  transition: all 0.2s;
+}
+
+.btn-2:hover {
+  border: 2px #8095FF solid;
+  background-color: #8095FF;
+  cursor: pointer;
+}
+
+.btn-2:active {
+  border: 2px #4863EC solid;
+  background-color: #4863EC;
+  cursor: pointer;
+}
+
+.account-icon{
+  float:left;
+  height:30px;
+  margin:auto;
+  filter: invert(100%);
+}
+
+.btn-2 h3{
+  width:170px;
+  float:right;
+}
+
+#btn-3 {
+  display: block;
+  overflow-x: hidden;
+  margin:auto;
+  width:200px;
+  text-decoration: none;
+  border-radius: 7px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 600;
+  border: 2px #8095FF solid;
+  color: white;
+  background-color: #8095FF;
+  padding: 5px;
+  transition: all 0.2s;
+  position:fixed;
+  top:20px;
+  right:20px;
+}
+
+#btn-3 img {
+  height:30px;
+  float:left;
+  filter: invert(100%);
+}
+
+#btn-3 h3 {
+  width:170px;
+}
+
+#submission-button-2{
+  height:50px;
+  width:50px;
+  font-size:25px;
+  border-radius:0px 7px 7px 0px;
+  border:none;
+  background: #617BFF;
+  font-weight:500;
+  color:white;
+  float:left;
+  position: fixed;
+  right:31%;
+  bottom:40px;
+}
+
+
+#submission-button-2:hover{
+  background: #8095FF;
+}
