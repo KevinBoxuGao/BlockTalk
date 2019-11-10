@@ -22,7 +22,7 @@ class Fm {
   }
 
   //Logout
-  handleLogout = () => {
+  handleLogOut = () => {
     this.fm.user.logout();
   }
 }

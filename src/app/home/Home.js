@@ -15,7 +15,7 @@ class Home extends Component {
     return (
       <div>
         {this.renderRedirect()}
-        <div class="container">
+        <div className="container">
           home
         </div>
       </div>

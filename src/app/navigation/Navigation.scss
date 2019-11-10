@@ -1,0 +1,16 @@
+#NavigationNonAuth {
+
+  .navbar-brand {
+    color:#4863EC;
+  }
+
+  .nav-link {
+    color:#4863EC;
+    font-size: 1.25rem;
+    transition: 0.5s;
+    &:hover {
+      color: #8095FF;
+    }
+    
+  }
+}
