@@ -29,8 +29,7 @@ let handleLogout = () => {
 let send = () => {
     var input = document.getElementById("messageInput").value;
     var div = document.createElement("DIV");
-    div.setAttribute("id", "message");
-    div.setAttribute("class", "sender");
+    div.setAttribute("class", "senderMessage");
 
     var text = document.createTextNode(input);
     div.appendChild(text);

@@ -32,23 +32,12 @@ h2 {
   margin-bottom: 10px;
 }
 
-form {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-
+/*Part of landing page*/
 .divider {
   width: 100px;
   height: 3px;
   margin: 20px auto;
   background-color: #617BFF;
-}
-
-input:focus,
-textarea:focus {
-  outline: none;
-  border: 2px #617BFF solid;
 }
 
 .container {
@@ -57,18 +46,9 @@ textarea:focus {
   padding: 4% 0%;
   text-align: center;
 }
+/*End for landing page*/
 
-input[name="amount"] {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
+/*Main button styling*/
 .btn {
     border-radius: 5px;
     border: none;
@@ -79,6 +59,7 @@ input[type=number]::-webkit-outer-spin-button {
     transition: 0.5s;
 }
 
+/*Page for logged-in users*/
 #logged-in {
   height: 100%;
 }
@@ -95,31 +76,13 @@ input[type=number]::-webkit-outer-spin-button {
   cursor: pointer;
 }
 
+/*Logout button*/
 #btn-logout {
   position: relative;
   right: 0;
 }
 
-#user-balance {
-  font-size: 24px;
-  color: white;
-  font-weight: 600;
-  margin: 20px 0;
-}
-
-#user-address {
-  font-size: 18px;
-  color: white;
-  font-weight: 500;
-  margin: 0 auto;
-  word-break: break-word;
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  max-width: 230px;
-  background: rgba(255,255,255,0.05);
-  padding: 10px 20px;
-  border-radius: 7px;
-}
-
+/*Hamburger icon for sidebar*/
 .menu {
   font-size: 30px;
   font-weight: 600;
@@ -129,6 +92,7 @@ input[type=number]::-webkit-outer-spin-button {
   cursor: pointer;
 }
 
+/*Side navbar*/
 .sidenav {
   height: 100%;
   width: 0;
@@ -142,6 +106,7 @@ input[type=number]::-webkit-outer-spin-button {
   padding-top: 60px;
 }
 
+/*Links on sidebar*/
 .sidenav a {
   color: black;
   font-size: 25px;
@@ -153,6 +118,7 @@ input[type=number]::-webkit-outer-spin-button {
   transition: 0.5s;
 }
 
+/*X button for closing sidebar*/
 #closeNav {
   font-size: 30px;
   position: absolute;
@@ -167,25 +133,19 @@ input[type=number]::-webkit-outer-spin-button {
     background-image: linear-gradient(to bottom right, rgb(0, 119, 255), rgb(95, 178, 255));
 }
 
+/*Place where chat messages are displayed*/
 #messages {
     position: fixed;
     padding: 5%;
     height: 40%;
     width: 85%;
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     flex-direction: column-reverse;
     overflow: auto;
 }
 
-.sender {
-  float: left;
-}
-
-.receiver {
-  float: right;
-}
-
+/*Input and button for entering messages*/
 #enter {
     position: absolute;
     position: fixed;
@@ -196,6 +156,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin-top: 10px;
 }
 
+/*Input and button for entering contact info*/
 #addContact {
     display: flex;
     width: 80%;
@@ -203,6 +164,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin-top: 10px;
 }
 
+/*Inputs for messaging and contact info*/
 #messageInput, #nameInput {
     color: grey;
     width: 90%;
@@ -218,25 +180,46 @@ input[type=number]::-webkit-outer-spin-button {
     padding: none;
 }
 
-#message {
+/*Messages from user formatted on the right*/
+.senderMessage {
     background-color: #4863EC;
     padding: 10px;
     border: 0;
     outline: 0;
     color: white;
+    margin: 5px 0px;
+    margin-left: auto;
 }
 
+/*Messages from receiver formatted on the left*/
+.receiverMessage {
+    background-color: rgb(129, 0, 161);
+    padding: 10px;
+    border: 0;
+    outline: 0;
+    color: white;
+    margin: 5px 0px;
+}
+
+/*Displays time at which message was sent*/
 .time {
     font-size: 15px;
     color: grey;
     margin-top: 10px;
+    align-self: center;
 }
 
-#message:hover {
+.senderMessage:hover {
     background-color: rgb(120, 122, 253);
     transition: 0.5s;
 }
 
+.receiverMessage:hover {
+  background-color: rgb(202, 82, 202);
+  transition: 0.5s;
+}
+
+/*Contact info div*/
 .contact {
   cursor: pointer;
   margin-bottom: 5px;
@@ -259,6 +242,7 @@ input[type=number]::-webkit-outer-spin-button {
   float: right;
 }
 
+/*Where contacts are stores*/
 #contacts {
   margin-top: 10px;
 }
