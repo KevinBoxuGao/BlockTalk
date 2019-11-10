@@ -9,7 +9,7 @@ const withAuthentication = Component => {
     constructor(props) {
       super(props);
       this.state = {
-        authUser: this.props.Fm.loggedIn ? this.props.Fm.fm.user.getUser().then(result => result): null,
+        authUser: this.props.Fm.loggedIn() ? this.props.Fm.fm.user.getUser().then(result => result): null,
       };
     }
 

@@ -14,3 +14,26 @@
     
   }
 }
+
+#NavigationAuth {
+  .navbar-brand {
+    color:#4863EC;
+  }
+
+  .link {
+    border: none;
+    background: none;
+    color:#4863EC;
+    font-size: 1.25rem;
+    transition: 0.5s;
+    &:hover {
+      color: #8095FF;
+    }
+  }
+}
+
+.navbar-brand {
+  h3 {
+    margin: 0;
+  }
+}
