@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withFortmatic } from '../../auth';
+import 'bootstrap';
 
 import {Redirect} from 'react-router-dom'
 
@@ -14,7 +15,9 @@ class Home extends Component {
     return (
       <div>
         {this.renderRedirect()}
-        Home
+        <div class="container">
+          home
+        </div>
       </div>
     )
   }

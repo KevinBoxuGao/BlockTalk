@@ -15,10 +15,8 @@ class SignIn extends Component {
   }
   
   handleClick = () => {
-    console.log('yes');
-    this.props.Fm.handleLogin().then(() => {
-      this.props.history.push(ROUTES.HOME);  
-    }); 
+    console.log(this.props.Fm.loggedIn());
+    this.props.Fm.handleLogin();
     this.props.history.push(ROUTES.HOME); 
   }
   
@@ -28,14 +26,13 @@ class SignIn extends Component {
         {this.renderRedirect()}
         <div className="container">
           <div>
-            <h1>Your Favorite Ethereum Wallet 💎></h1>
+            <h1>Bytemail 2.0 - Your Favorite Ethereum DApp 💎</h1>
             <div className="divider"></div>
-            <div id="section-login">(
-              <button id="btn-login" className="btn" onClick={() => this.handleClick()}>Login with SMS</button>
-            </div>
+            <button id="btn-login" className="btn" onClick={() => this.handleClick()}>Login/Signup</button>
           </div>
         </div>
       </div>
+
     );
   }
 }

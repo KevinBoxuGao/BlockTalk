@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import * as ROUTES from '../constants/routes';
 
-import { withAuthentication } from '../session';
 import "./App.css";
 
 import Navigation from './navigation/Navigation';
@@ -19,7 +18,7 @@ function App() {
   return(
     <Router>
       <Navigation></Navigation>
-      <hr/>
+
       <Route exact path={ROUTES.LANDING} component={Landing} />
       <Route path={ROUTES.SIGN_IN} component={SignIn} />
       <Route path={ROUTES.HOME} component={Home} />
@@ -27,4 +26,4 @@ function App() {
   );
 }
 
-export default withAuthentication(App);
+export default App;

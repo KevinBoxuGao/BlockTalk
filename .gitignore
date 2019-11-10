@@ -1,6 +1,5 @@
 #configuration
 .eslintrc.json
-dist
 
 # Logs
 logs

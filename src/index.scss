@@ -1,2 +1,37 @@
 @import '~bootstrap/scss/bootstrap';
 @import './normalize.css';
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+
+$primary-color: #211f2b;
+$highlight-color: #8095FF;
+$highlight-color2:#4863EC;
+
+
+html,
+body {
+  font-family: "Ubuntu", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1 {
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+h2 {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
