@@ -1,37 +1,58 @@
 import React, { Component } from 'react'
 import { withFortmatic } from '../../auth';
 import * as ROUTES from '../../constants/routes';
-import {AuthUserContext} from '../../session';
+import {AuthUserContext, AuthCentralState} from '../../session';
 import {withRouter} from 'react-router-dom';
 
 import './SignIn.scss';
 
 
 class SignIn extends Component {
-  handleClick = toggler => {
-    this.props.Fm.handleLogin().then(() => {
-      fm.user.getUser() 
-    }).then(userdata => {
-      toggler(userData)
-    }).then(() => {
-      this.props.history.push(ROUTES.HOME);
-    })
+  constructor(props) {
+    super(props);
+    this.state = {
+      redirectToReferrer: false
+    };
   }
+
+  logIn = () => {
+    this.props.history.push(ROUTES.SIGN_IN);
+    //AuthCentralState.authenticate(() => {
+    //  this.props.Fm.handleLogin().then(() => {
+    //    this.setState(() => ({
+    //      redirectToReferrer: true
+    //    }));
+    //  });
+    //});
+  }
+
+  //handleClick = toggler => {
+  //  this.props.Fm.handleLogin().then(() => {
+  //    fm.user.getUser() 
+  //  }).then(userdata => {
+  //    toggler(userData)
+  //  }).then(() => {
+  //    this.props.history.push(ROUTES.HOME);
+  //  })
+  //}
 
   logOut = toggler => {
     this.props.Fm.handleLogOut().then(() => {
       toggler(null)
     }).then(() => {
-      this.props.history.push(ROUTES.HOME);
+      this.props.history.push(ROUTES.SIGN_IN);
     })
-  }
-  
-  componentWillMount() {
-
   }
 
   render() {
+    const { from } = { from: { pathname: '/' } };
+    const { redirectToReferrer } = this.state;
 
+    console.log(from);
+
+    //if (redirectToReferrer === true) {
+    //  this.props.history.push(from.pathname);
+    //}
     return (
       <AuthUserContext.Consumer>
         {({authUser, updateAuth}) =>
@@ -41,7 +62,7 @@ class SignIn extends Component {
                 <div className="content d-flex flex-column">
                   <h1>Blocktalk💎</h1>
                   <div className="divider"></div>
-                  <button id="btn-login" className="btn" onClick={() => this.handleClick(updateAuth)}>Login/Signup</button>
+                  <button id="btn-login" className="btn" onClick={() => this.props.history.push(ROUTES.SIGN_IN)}>Login/Signup</button>
                   <button id="btn-logout" className="btn" onClick={() => this.logOut(updateAuth)}>Logout</button>
                 </div>
               </div>
