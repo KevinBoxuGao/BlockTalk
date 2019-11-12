@@ -4,11 +4,19 @@ window.web3 = new Web3(fm.getProvider());
 var CURRENT_RECIPIENT =  ""
 var CURRENT_UID = ""
 
+//send user to login
+let handleLanding = () => {
+    $('#logged-in').hide();
+    $('#LandingPage').hide();
+    $('#loginPage').show();
+    closeSideNav();
+}
+
 //Logs user in
 let handleLogin = () => {
     fm.user.login().then(() => {
         console.log(fm.user.isLoggedIn());
-        $('.container').hide();
+        $('#loginPage').hide();
         $('#logged-in').show();
         let userData = fm.user.getUser().then(res => {
             document.getElementById("btn-3-h3").innerText += "  "+truncate(res.userId,16,'...')
@@ -21,7 +29,7 @@ let handleLogin = () => {
 let handleLogout = () => {
     fm.user.logout();
     $('#logged-in').hide();
-    $('.container').show();
+    $('#loginPage').show();
     closeSideNav();
 }
 
@@ -156,8 +164,12 @@ let addContact = () => {
 
 //Allows for adding events to dynamic elements
 window.onload = function() {
+    $('#loginPage').hide(); //Hides in login page
     $('#logged-in').hide(); //Hides in login page
     //$('#chat').hide(); //Hides chat page
+    $('#btn-landing').on('click', () => { //Landing
+        handleLanding();
+    });
     $('#enter-button').on('click', renderMessage); //Send message
     $('#btn-login').on('click', () => { //Login
         handleLogin();
