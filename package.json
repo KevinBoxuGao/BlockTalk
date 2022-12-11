@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "ethers": "^4.0.39",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "fortmatic": "^1.0.0",
     "ipfs-http-client": "^39.0.2",
     "is-ipfs": "^0.6.1",
